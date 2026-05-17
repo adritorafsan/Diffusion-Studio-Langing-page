@@ -1,3 +1,6 @@
+import EditSurface from "./MainComponents/EditSurface"
+import Hero from "./MainComponents/Hero"
+import Navbar from "./MainComponents/Navbar"
 
 
 function App() {
@@ -5,7 +8,11 @@ function App() {
 
   return (
     <>
-      <h1 className=" text-2xl font-bold text-green-500">Adrito Rafsan</h1>
+     <div className="max-w-[1440px] mx-auto">
+      <Navbar />
+      <Hero />
+      <EditSurface />
+     </div>
     </>
   )
 }
