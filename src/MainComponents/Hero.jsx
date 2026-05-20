@@ -26,7 +26,7 @@ const Hero = () => {
             <div className='flex flex-col gap-y-9 pl-2 ml-10'>
                 <p className='text-xl font-primary text-[#fa413e] font-medium'>NOW IN OPEN ALPHA</p>
                 <h1 className='text-4xl font-primary font-normal max-w-[38%] text-primary'>The creative platform for video and motion graphics.</h1>
-                <p className='text-secondary text-pretty max-w-[27%]'>Create, edit, and iterate faster, right in your browser. A canvas for creative freedom, built for creators.</p>
+                <p className='text-secondary font-primary text-pretty max-w-[27%]'>Create, edit, and iterate faster, right in your browser. A canvas for creative freedom, built for creators.</p>
                 <Button2 text={"open in browser"}  />
             </div>
             <div className='flex justify-center items-center'>
