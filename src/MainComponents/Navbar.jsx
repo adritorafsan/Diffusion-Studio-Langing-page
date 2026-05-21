@@ -1,12 +1,25 @@
 import { GiMoebiusTrefoil } from "react-icons/gi";
 import Button1 from "../SubComponents/Button1";
+import { useEffect, useState } from "react";
+
 
 
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
     const Navlinks=["pricing","changelog","contact"];
   return (
-    <div className="flex items-center py-5 justify-between border-b border-b-secondary/30">
-        <div className="flex items-center gap-x-1.5 cursor-pointer">
+    <div className={`flex items-center py-5 px-2 justify-between border-b border-b-secondary/30 sticky top-0 shadow-2xl backdrop-blur-xl z-50 ${scrolled ? "bg-secondary/25 rounded-2xl" : "bg-transparent rounded-none"} transition-colors duration-300 ease-in-out`}>
+        <div onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-x-1.5 cursor-pointer">
             <GiMoebiusTrefoil className="text-xl text-primary" />
             <h1 className="text-xl text-primary font-primary">Diffusion Studio</h1>
         </div>
